@@ -1,2 +1,3 @@
 # ogl
-messing around with ogl 
+messing around with OpenGL
+plan on using this for future projects 
