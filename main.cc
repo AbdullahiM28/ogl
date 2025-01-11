@@ -1,6 +1,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <chrono>
 
 int main() {
 	
@@ -35,6 +36,8 @@ int main() {
                 -0.5f, -0.5f,
                 0.5f, -0.5f
         };
+	
+	int x = 0;
 	// render loop
 	while (!glfwWindowShouldClose(window)) {
 		glClear(GL_COLOR_BUFFER_BIT); // clears the screen
@@ -50,6 +53,12 @@ int main() {
 		glfwSwapBuffers(window);
 
 		glfwPollEvents();
+
+        while (duration_cast<seconds>(steady_clock::now() - start).count() < 3) {
+            std::cout << x << std::endl;
+        }
+		x++;
+
 	}
 
 
