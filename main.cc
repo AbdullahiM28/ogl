@@ -4,7 +4,7 @@
 #include <chrono>
 
 int main() {
-	
+	float speed = 3; // determines have fast the block drops
 	glewInit();
 
 	if (!glfwInit()) {
@@ -37,6 +37,8 @@ int main() {
                 0.5f, -0.5f
         };
 	
+
+
 	int x = 0;
 	// render loop
 	while (!glfwWindowShouldClose(window)) {
@@ -56,7 +58,7 @@ int main() {
 
 		using namespace std::chrono;
 		auto start = steady_clock::now();
-        while (duration_cast<seconds>(steady_clock::now() - start).count() < 3) {
+        while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {
 			// DO NOTHING
         }
 		std::cout << x << std::endl;
