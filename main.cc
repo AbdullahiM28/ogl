@@ -55,6 +55,7 @@ int main() {
 		glfwPollEvents();
 
 		using namespace std::chrono;
+		auto start = steady_clock::now();
         while (duration_cast<seconds>(steady_clock::now() - start).count() < 3) {
             std::cout << x << std::endl;
         }
