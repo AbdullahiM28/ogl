@@ -7,7 +7,7 @@
 
 ########## Variables ##########
 
-CXX = g++-11					# compiler
+CXX = g++					# compiler
 CXXFLAGS = -std=c++20 -g -Wall -Werror=vla -MMD		# compiler flags
 MAKEFILE_NAME = ${firstword ${MAKEFILE_LIST}}	# makefile name
 
