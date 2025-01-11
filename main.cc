@@ -28,7 +28,7 @@ int main() {
 	}
 
 	// set the OpenGL viewport
-	glViewport(0, 0, 100, 600);
+	glViewport(0, 0, 600, 600);
 
  	float vertices[] = {
                 0.0f, 0.5f,
