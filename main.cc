@@ -6,7 +6,6 @@
 
 
 class hash_pair { // lifted from geeksforgeeks
-	using namespace std;
 	public:
     template <class T1, class T2>
     size_t operator()(const std::pair<T1, T2>& p) const
