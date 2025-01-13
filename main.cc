@@ -1,35 +1,32 @@
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include <functional>
 #include <iostream>
-#include <chrono>
+#include <unordered_map>
+#include <utility>
+#include "window.h"
+
+
+class hash_pair { // lifted from geeksforgeeks
+	public:
+    template <class T1, class T2>
+    size_t operator()(const pair<T1, T2>& p) const
+    {
+        // Hash the first element
+        size_t hash1 = hash<T1>{}(p.first);
+        // Hash the second element
+        size_t hash2 = hash<T2>{}(p.second);
+        // Combine the two hash values
+        return hash1
+               ^ (hash2 + 0x9e3779b9 + (hash1 << 6)
+                  + (hash1 >> 2));
+    }
+};
 
 int main() {
 	float speed = 3; // determines have fast the block drops
-	glewInit();
+	OGL_Window w;
+	GLFWwindow *window = w.getWindow();
 
-	if (!glfwInit()) {
-		std::cerr << "Failed to init GLFW" << std::endl;
-		return -1;
-	}
 
-	GLFWwindow* window = glfwCreateWindow(600, 600, "NIGG NIGG REGGIN", NULL, NULL);
-	if (!window) {
-		std::cerr << "Failed to create GLFW window" << std::endl;
-		glfwTerminate();
-		return -1;
-	}
-
-	// make the OpenGl context current
-	glfwMakeContextCurrent(window);
-
-	// Init GLEW 
-	if (glewInit() != GLEW_OK) {
-		std::cerr << "Failed to init GLEW" << std::endl;
-		return -1;
-	}
-
-	// set the OpenGL viewport
-	glViewport(0, 0, 600, 600);
 
  	float vertices[] = {
                 0.0f, 0.5f,
@@ -63,15 +60,12 @@ int main() {
         }
 		std::cout << x << std::endl;
 		x++;
-
 	}
 
 
-	glfwDestroyWindow(window);
-	glfwTerminate();
+
 	
 	return 0;	
-	
 }
 
 
