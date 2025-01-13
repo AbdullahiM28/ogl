@@ -8,7 +8,7 @@
 class hash_pair { // lifted from geeksforgeeks
 	public:
     template <class T1, class T2>
-    size_t operator()(const pair<T1, T2>& p) const
+    size_t operator()(const std::pair<T1, T2>& p) const
     {
         // Hash the first element
         size_t hash1 = hash<T1>{}(p.first);
