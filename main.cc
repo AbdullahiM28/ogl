@@ -26,16 +26,12 @@ int main() {
 	OGL_Window w;
 	GLFWwindow *window = w.getWindow();
 
-
-
  	float vertices[] = {
                 0.0f, 0.5f,
                 -0.5f, -0.5f,
                 0.5f, -0.5f
-        };
+    };
 	
-
-
 	int x = 0;
 	// render loop
 	while (!glfwWindowShouldClose(window)) {
@@ -61,16 +57,6 @@ int main() {
 		std::cout << x << std::endl;
 		x++;
 	}
-
-
-
-	
 	return 0;	
 }
-
-
-
-
-
-
 

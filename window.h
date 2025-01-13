@@ -4,7 +4,7 @@
 #include <chrono>
 
 class OGL_Window {
-    GLFWwindow* window;
+    GLFWwindow* window = NULL;
 
     public:
         OGL_Window(); // ctor
