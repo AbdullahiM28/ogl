@@ -18,7 +18,7 @@ EXEC = example				# executable name
 
 ########## Targets ##########
 
-.PHONY : clean					# not file names
+.PHONY : clean run					# not file names
 
 ${EXEC} : ${OBJECTS}				# link step
 	${CXX} ${CXXFLAGS} $^ -o $@ -lX11 -lGLEW -lGL -lglfw
@@ -31,3 +31,6 @@ ${OBJECTS} : ${MAKEFILE_NAME}			# OPTIONAL : changes to this file => recompile
 
 clean :						# remove files that can be regenerated
 	rm -f ${DEPENDS} ${OBJECTS} ${EXEC}
+
+run: ${EXEC}
+	export LIBGL_ALWAYS_SOFTWARE=1 && ./$(EXEC)
