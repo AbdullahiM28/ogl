@@ -8,7 +8,7 @@ OGL_Window::OGL_Window() {
 		exit(-1);
 	}
 
-    window = glfwCreateWindow(600, 600, "Title", glfwGetPrimaryMonitor(), NULL);
+    window = glfwCreateWindow(600, 600, "Tetris", glfwGetPrimaryMonitor(), NULL);
     if (!window) {
 		std::cerr << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
