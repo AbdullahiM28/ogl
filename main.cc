@@ -34,7 +34,7 @@ int main() {
 	// render loop
 	OGL_Window w;
 	GLFWwindow *window = w.getWindow();
-	glClear(GL_COLOR_BUFFER_BIT); // clears the screen
+	// glClear(GL_COLOR_BUFFER_BIT); // clears the screen
 	// glClearColour(red, green, blue, opaqueness)
 	glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // puts color on the screen
 
