@@ -37,17 +37,18 @@ int main() {
 
 	while (true) {
 			// #### glClearColour(red, green, blue, opaqueness)
-			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
 
 	if (x % 3 == 0) {
-			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
 			glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // puts color on the screen
+			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
+			
 	} else if (x % 3 == 1) {
-			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
 			glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // puts color on the screen
-	} else {
 			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
+			
+	} else {
 			glClearColor(1.0f, 0.0f, 0.0f, 1.0f); // puts color on the screen
+			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
 	}
 
 
