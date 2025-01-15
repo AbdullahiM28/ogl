@@ -25,10 +25,10 @@ int main() {
 	float speed = 3; // determines have fast the block drops
 
 	float vertices[] = {
-    	-0.25f,  0.25f,  // top-left
-    	0.25f,  0.25f,   // top-right
-    	-0.25f, -0.25f,  // bottom-left
-    	0.25f, -0.25f    // bottom-right
+    	-0.25f + 0.5f,  0.25f + 0.5f,  // top-left
+    	0.25f + 0.5f,  0.25f + 0.5f,   // top-right
+    	-0.25f + 0.5f, -0.25f + 0.5f,  // bottom-left
+    	0.25f + 0.5f, -0.25f  + 0.5f  // bottom-right
 	};
 	
 	int x = 0;
