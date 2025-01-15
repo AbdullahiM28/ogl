@@ -23,8 +23,6 @@ class hash_pair { // lifted from geeksforgeeks
 
 int main() {
 	float speed = 3; // determines have fast the block drops
-	OGL_Window w;
-	GLFWwindow *window = w.getWindow();
 
  	float vertices[] = {
                 0.0f, 0.5f,
@@ -34,25 +32,26 @@ int main() {
 	
 	int x = 0;
 	// render loop
-	while (!glfwWindowShouldClose(window)) {
-		glClear(GL_COLOR_BUFFER_BIT); // clears the screen
+	OGL_Window w;
+	GLFWwindow *window = w.getWindow();
+	glClear(GL_COLOR_BUFFER_BIT); // clears the screen
+	// glClearColour(red, green, blue, opaqueness)
+	glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // puts color on the screen
 
-		// draw something
-		glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // clear with blue color
 
-		glEnableClientState(GL_VERTEX_ARRAY);
-        	glVertexPointer(2, GL_FLOAT, 0, vertices);
-       		glDrawArrays(GL_TRIANGLES, 0, 3);
-        	glDisableClientState(GL_VERTEX_ARRAY);
-		
-		glfwSwapBuffers(window);
+	glEnableClientState(GL_VERTEX_ARRAY);
+    glVertexPointer(2, GL_FLOAT, 0, vertices);
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDisableClientState(GL_VERTEX_ARRAY);
 
-		glfwPollEvents();
+	glfwSwapBuffers(window);
 
+	glfwPollEvents();
+	while (true) {
 		using namespace std::chrono;
 		auto start = steady_clock::now();
         while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {
-			// DO NOTHING
+			// DO NOTHING for speed amount of seconds
         }
 		std::cout << x << std::endl;
 		x++;
