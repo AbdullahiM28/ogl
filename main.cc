@@ -24,11 +24,12 @@ class hash_pair { // lifted from geeksforgeeks
 int main() {
 	float speed = 3; // determines have fast the block drops
 
- 	float vertices[] = {
-                0.0f, 0.5f,
-                -0.5f, -0.5f,
-                0.5f, -0.5f
-    };
+	float vertices[] = {
+    	-0.5f,  0.5f,  // top-left
+    	0.5f,  0.5f,   // top-right
+    	-0.5f, -0.5f,  // bottom-left
+    	0.5f, -0.5f    // bottom-right
+	};
 	
 	int x = 0;
 	// render loop
@@ -54,7 +55,7 @@ int main() {
 
 	glEnableClientState(GL_VERTEX_ARRAY); // eneables drawing (using arrays)
     glVertexPointer(2, GL_FLOAT, 0, vertices);
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 3);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     glDisableClientState(GL_VERTEX_ARRAY); // disables drawing
 
 	glfwSwapBuffers(window);
