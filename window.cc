@@ -1,14 +1,18 @@
 #include "window.h"
 
-OGL_Window::OGL_Window() {
+OGL_Window::OGL_Window(bool fullscreen) {
 
     glewInit();
 	if (!glfwInit()) {
 		std::cerr << "Failed to init GLFW" << std::endl;
 		exit(-1);
 	}
-
-    window = glfwCreateWindow(600, 600, "Tetris", glfwGetPrimaryMonitor(), NULL);
+	if (fullscreen) {
+		window = glfwCreateWindow(600, 600, "Tetris", glfwGetPrimaryMonitor(), NULL);
+	} else {
+		window = glfwCreateWindow(600, 600, "Tetris", NULL, NULL);
+	}
+    
     if (!window) {
 		std::cerr << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();

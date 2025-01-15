@@ -7,7 +7,7 @@ class OGL_Window {
     GLFWwindow* window = NULL;
 
     public:
-        OGL_Window(); // ctor
+        OGL_Window(bool fullscreen = false); // ctor
         ~OGL_Window(); // dtor
         GLFWwindow* getWindow();
 
