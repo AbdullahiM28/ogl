@@ -34,9 +34,12 @@ int main() {
 	// render loop
 	OGL_Window w;
 	GLFWwindow *window = w.getWindow();
-	// glClearColour(red, green, blue, opaqueness)
-	glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // puts color on the screen
+
+	while (true) {
+			// glClearColour(red, green, blue, opaqueness)
 	glClear(GL_COLOR_BUFFER_BIT); // clears the screen
+	glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // puts color on the screen
+	
 
 
 	glEnableClientState(GL_VERTEX_ARRAY);
@@ -47,7 +50,6 @@ int main() {
 	glfwSwapBuffers(window);
 
 	glfwPollEvents();
-	while (true) {
 		using namespace std::chrono;
 		auto start = steady_clock::now();
         while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {
