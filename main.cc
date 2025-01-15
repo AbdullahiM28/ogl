@@ -52,10 +52,10 @@ int main() {
 	}
 
 
-	glEnableClientState(GL_VERTEX_ARRAY);
+	glEnableClientState(GL_VERTEX_ARRAY); // eneables drawing (using arrays)
     glVertexPointer(2, GL_FLOAT, 0, vertices);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
-    glDisableClientState(GL_VERTEX_ARRAY);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 3);
+    glDisableClientState(GL_VERTEX_ARRAY); // disables drawing
 
 	glfwSwapBuffers(window);
 
