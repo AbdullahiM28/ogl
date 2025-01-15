@@ -41,7 +41,7 @@ int main() {
 	if (x % 3 == 0) {
 			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
 			glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // puts color on the screen
-	} elif (x % 3 == 1) {
+	} else if (x % 3 == 1) {
 			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
 			glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // puts color on the screen
 	} else {
