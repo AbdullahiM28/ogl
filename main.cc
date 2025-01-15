@@ -24,7 +24,11 @@ class hash_pair { // lifted from geeksforgeeks
 int main() {
 	float speed = 3; // determines have fast the block drops
 
-	float vertices[] = {
+
+	// making each point 0.25f makes the square smaller (compared to 0.5f)
+	// adding 0.5f to a point moves the point to the right
+	// adding 0.5f to all points puts the square in the top right
+	float vertices[] = { 
     	-0.25f + 0.5f,  0.25f + 0.5f,  // top-left
     	0.25f + 0.5f,  0.25f + 0.5f,   // top-right
     	-0.25f + 0.5f, -0.25f + 0.5f,  // bottom-left
