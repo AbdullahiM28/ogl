@@ -36,7 +36,8 @@ int main() {
 	GLFWwindow *window = w.getWindow();
 
 	while (true) {
-			// glClearColour(red, green, blue, opaqueness)
+			// #### glClearColour(red, green, blue, opaqueness)
+			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
 
 	if (x % 3 == 0) {
 			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
