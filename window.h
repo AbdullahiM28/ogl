@@ -1,3 +1,6 @@
+#ifndef OGL_WINDOW.H
+#define OGL_WINDOW.H
+
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
@@ -25,4 +28,4 @@ class OGL_Window {
         GLFWwindow* getWindow();
 };
 
-
+#endif

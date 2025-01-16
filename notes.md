@@ -4,6 +4,9 @@ __TO DO:__
 
 icon (desktop icon), probably using both glfw and stbi
 
-make square smaller 
+encapsulate changing color (before drawing)
 
-fully classify window 
+finish DrawRectangle and changeColor
+
+add drawText() and clearWindow()
+
