@@ -28,12 +28,7 @@ int main() {
 	// making each point 0.25f makes the square smaller (compared to 0.5f)
 	// adding 0.5f to a point moves the point to the right
 	// adding 0.5f to all points puts the square in the top right
-	float vertices[] = { 
-    	-0.01f,  0.01f,  // top-left
-    	0.01f,  0.01f,   // top-right
-    	-0.01f, -0.01f,  // bottom-left
-    	0.01f, -0.01f  // bottom-right
-	};
+
 	
 	
 	// render loop
@@ -57,15 +52,8 @@ int main() {
 			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
 		}
 
+		w.drawRectangle();
 
-		glEnableClientState(GL_VERTEX_ARRAY); // eneables drawing (using arrays)
-    	glVertexPointer(2, GL_FLOAT, 0, vertices);
-    	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    	glDisableClientState(GL_VERTEX_ARRAY); // disables drawing
-
-		glfwSwapBuffers(window);
-
-		glfwPollEvents();
 		using namespace std::chrono;
 		auto start = steady_clock::now();
         while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {
