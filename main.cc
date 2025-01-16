@@ -37,7 +37,7 @@ int main() {
 	
 	
 	// render loop
-	OGL_Window w(600, 800); // width, height
+	OGL_Window w(600, 600); // width, height
 	GLFWwindow *window = w.getWindow();
 
 	int x = 0;
