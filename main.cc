@@ -57,13 +57,10 @@ int main() {
 		using namespace std::chrono;
 		auto start = steady_clock::now();
         while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {
+			// DO NOTHING for speed amount of seconds
         }
 		std::cout << x << std::endl;
 		x++;
-					// DO NOTHING for speed amount of seconds
-		for (int i = 0; i < 8; i++) {
-			vertices[i] += 0.1f;
-		}
 	}
 	return 0;	
 }
