@@ -60,7 +60,7 @@ void OGL_Window::drawRectangle(int width, int height, Colors c) {
 	startDrawing();
 	glVertexPointer(2, GL_FLOAT, 0, vertices);
 
-	glColor3f(1.0f, 0.0f, 0.0f); // sets the drawing color
+	glColor3f(1.0f, 1.0f, 1.0f); // sets the drawing color
 	// chooseColor(c); // this will clear the old color then choose the new color
 
 
