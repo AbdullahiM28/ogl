@@ -61,6 +61,9 @@ int main() {
         }
 		std::cout << x << std::endl;
 		x++;
+		if (x == 5) {
+			break;
+		}
 	}
 	return 0;	
 }
