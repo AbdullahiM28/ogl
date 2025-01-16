@@ -59,7 +59,12 @@ void OGL_Window::drawRectangle(int width, int height, Colors c) {
 	};
 	startDrawing();
 	glVertexPointer(2, GL_FLOAT, 0, vertices);
+
+	glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // (R, G, B, opaqueness)
+	glClear(GL_COLOR_BUFFER_BIT);
 	// chooseColor(c); // this will clear the old color then choose the new color
+
+
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 	stopDrawing();
 
