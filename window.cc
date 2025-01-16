@@ -28,8 +28,7 @@ OGL_Window::OGL_Window(int width, int height, bool fullscreen) {
 		exit(-1);
 	}
 
-	// set the OpenGL viewport
-	glViewport(0, 0, width + 100, height + 100);     
+	// glViewport(0, 0, width, height); viewport is automatically set to window size 
 }
 
 
