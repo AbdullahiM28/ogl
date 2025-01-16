@@ -70,7 +70,7 @@ int main() {
         while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {
 			// DO NOTHING for speed amount of seconds
 			for (int i = 0; i < 8; i++) {
-				vertices[i] += 0.25f;
+				vertices[i] += 0.1f;
 			}
         }
 		std::cout << x << std::endl;
