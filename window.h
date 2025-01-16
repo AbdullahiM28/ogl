@@ -12,8 +12,8 @@ class OGL_Window {
     GLFWwindow* window = NULL;
 
     public:
-        OGL_Window(int width, int height, bool fullscreen = false); // ctor
-        ~OGL_Window(); // dtor
+        OGL_Window(int width, int height, std::string name = "window", bool fullscreen = false);
+        ~OGL_Window();
         // drawRectangle(int width, int height, Color c)
         GLFWwindow* getWindow();
 

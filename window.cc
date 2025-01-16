@@ -1,6 +1,6 @@
 #include "window.h"
 
-OGL_Window::OGL_Window(int width, int height, bool fullscreen) {
+OGL_Window::OGL_Window(int width, int height, std::string name, bool fullscreen) {
 
     glewInit();
 	if (!glfwInit()) {
@@ -8,9 +8,9 @@ OGL_Window::OGL_Window(int width, int height, bool fullscreen) {
 		exit(-1);
 	}
 	if (fullscreen) {
-		window = glfwCreateWindow(width, height, "Tetris", glfwGetPrimaryMonitor(), NULL);
+		window = glfwCreateWindow(width, height, name, glfwGetPrimaryMonitor(), NULL);
 	} else {
-		window = glfwCreateWindow(width, height, "Tetris", NULL, NULL);
+		window = glfwCreateWindow(width, height, name, NULL, NULL);
 	}
     
     if (!window) {
