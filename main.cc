@@ -29,10 +29,10 @@ int main() {
 	// adding 0.5f to a point moves the point to the right
 	// adding 0.5f to all points puts the square in the top right
 	float vertices[] = { 
-    	-0.25f + 0.5f,  0.25f + 0.5f,  // top-left
-    	0.25f + 0.5f,  0.25f + 0.5f,   // top-right
-    	-0.25f + 0.5f, -0.25f + 0.5f,  // bottom-left
-    	0.25f + 0.5f, -0.25f  + 0.5f  // bottom-right
+    	-0.25f,  0.25f,  // top-left
+    	0.25f,  0.25f,   // top-right
+    	-0.25f, -0.25f,  // bottom-left
+    	0.25f, -0.25f  // bottom-right
 	};
 	
 	int x = 0;
@@ -69,6 +69,9 @@ int main() {
 		auto start = steady_clock::now();
         while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {
 			// DO NOTHING for speed amount of seconds
+			for (int i = 0; i < 8; i++) {
+				vertices[i] += 0.25f;
+			}
         }
 		std::cout << x << std::endl;
 		x++;

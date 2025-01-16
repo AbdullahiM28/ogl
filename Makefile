@@ -21,7 +21,7 @@ EXEC = example				# executable name
 .PHONY : clean run					# not file names
 
 ${EXEC} : ${OBJECTS}				# link step
-	${CXX} ${CXXFLAGS} $^ -o $@ -lX11 -lGLEW -lGL -lglfw
+	${CXX} ${CXXFLAGS} $^ -o $@ -lGLEW -lGL -lglfw
 
 ${OBJECTS} : ${MAKEFILE_NAME}			# OPTIONAL : changes to this file => recompile
 
