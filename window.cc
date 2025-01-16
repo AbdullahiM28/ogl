@@ -50,12 +50,12 @@ void OGL_Window::stopDrawing() {
 	glDisableClientState(GL_VERTEX_ARRAY);
 }
 
-void OGL_Window::drawRectangle(int width_scale, int height_scale, Colors c) {
+void OGL_Window::drawRectangle(int width, int height, Colors c) {
 	float vertices[] = { 
-    	-0.01f,  0.01f,  // top-left (x, y)
-    	0.01f,  0.01f,   // top-right 
-    	-0.01f, -0.01f,  // bottom-left
-    	0.01f, -0.01f  // bottom-right
+    	-0.01f * width,  0.01f * height,  // top-left (x, y)
+    	0.01f * width,  0.01f * height,   // top-right 
+    	-0.01f * width, -0.01f * height,  // bottom-left
+    	0.01f * width, -0.01f * height  // bottom-right
 	};
 	startDrawing();
 	glVertexPointer(2, GL_FLOAT, 0, vertices);

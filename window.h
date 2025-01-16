@@ -15,7 +15,7 @@ class OGL_Window {
         OGL_Window(int width, int height, std::string name = "window", bool fullscreen = false);
         ~OGL_Window();
         
-        void drawRectangle(int width_scale = 1, int height_scale = 1, Colors c = Colors::WHITE);
+        void drawRectangle(int width = 5, int height = 5, Colors c = Colors::WHITE);
         // void drawText(put params here);
 
         void startDrawing();
