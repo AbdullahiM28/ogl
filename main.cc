@@ -35,36 +35,37 @@ int main() {
     	0.25f, -0.25f  // bottom-right
 	};
 	
-	int x = 0;
+	
 	// render loop
-	OGL_Window w;
+	OGL_Window w(600, 800); // width, height
 	GLFWwindow *window = w.getWindow();
 
+	int x = 0;
 	while (true) {
 			// #### glClearColour(red, green, blue, opaqueness)
 
-	if (x % 3 == 0) {
+		if (x % 3 == 0) {
 			glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // puts color on the screen
 			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
 			
-	} else if (x % 3 == 1) {
+		} else if (x % 3 == 1) {
 			glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // puts color on the screen
 			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
 			
-	} else {
+		} else {
 			glClearColor(1.0f, 0.0f, 0.0f, 1.0f); // puts color on the screen
 			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
-	}
+		}
 
 
-	glEnableClientState(GL_VERTEX_ARRAY); // eneables drawing (using arrays)
-    glVertexPointer(2, GL_FLOAT, 0, vertices);
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    glDisableClientState(GL_VERTEX_ARRAY); // disables drawing
+		glEnableClientState(GL_VERTEX_ARRAY); // eneables drawing (using arrays)
+    	glVertexPointer(2, GL_FLOAT, 0, vertices);
+    	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    	glDisableClientState(GL_VERTEX_ARRAY); // disables drawing
 
-	glfwSwapBuffers(window);
+		glfwSwapBuffers(window);
 
-	glfwPollEvents();
+		glfwPollEvents();
 		using namespace std::chrono;
 		auto start = steady_clock::now();
         while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {

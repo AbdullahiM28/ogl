@@ -1,6 +1,6 @@
 #include "window.h"
 
-OGL_Window::OGL_Window(bool fullscreen) {
+OGL_Window::OGL_Window(int width, int height, bool fullscreen) {
 
     glewInit();
 	if (!glfwInit()) {
@@ -8,9 +8,9 @@ OGL_Window::OGL_Window(bool fullscreen) {
 		exit(-1);
 	}
 	if (fullscreen) {
-		window = glfwCreateWindow(600, 600, "Tetris", glfwGetPrimaryMonitor(), NULL);
+		window = glfwCreateWindow(width, height, "Tetris", glfwGetPrimaryMonitor(), NULL);
 	} else {
-		window = glfwCreateWindow(600, 600, "Tetris", NULL, NULL);
+		window = glfwCreateWindow(width, height, "Tetris", NULL, NULL);
 	}
     
     if (!window) {
@@ -29,7 +29,7 @@ OGL_Window::OGL_Window(bool fullscreen) {
 	}
 
 	// set the OpenGL viewport
-	glViewport(0, 0, 600, 600);     
+	glViewport(0, 0, width, height);     
 }
 
 
