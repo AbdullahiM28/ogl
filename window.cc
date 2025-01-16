@@ -8,9 +8,9 @@ OGL_Window::OGL_Window(int width, int height, std::string name, bool fullscreen)
 		exit(-1);
 	}
 	if (fullscreen) {
-		window = glfwCreateWindow(width, height, name, glfwGetPrimaryMonitor(), NULL);
+		window = glfwCreateWindow(width, height, name.c_str(), glfwGetPrimaryMonitor(), NULL);
 	} else {
-		window = glfwCreateWindow(width, height, name, NULL, NULL);
+		window = glfwCreateWindow(width, height, name.c_str(), NULL, NULL);
 	}
     
     if (!window) {
