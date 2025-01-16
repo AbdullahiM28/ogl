@@ -29,10 +29,10 @@ int main() {
 	// adding 0.5f to a point moves the point to the right
 	// adding 0.5f to all points puts the square in the top right
 	float vertices[] = { 
-    	-0.05f,  0.05f,  // top-left
-    	0.05f,  0.05f,   // top-right
-    	-0.05f, -0.05f,  // bottom-left
-    	0.05f, -0.05f  // bottom-right
+    	-0.01f,  0.01f,  // top-left
+    	0.01f,  0.01f,   // top-right
+    	-0.01f, -0.01f,  // bottom-left
+    	0.01f, -0.01f  // bottom-right
 	};
 	
 	
