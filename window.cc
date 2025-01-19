@@ -3,8 +3,8 @@
 OGL_Window::OGL_Window(int width, int height, std::string name, bool fullscreen) {
 
     glewInit();
-	if (glewInit() != GLEW_OK) {
-		std::cerr << "Failed to init GLEW" << std::endl;
+	if (!glfwInit()) {
+		std::cerr << "Failed to init GLFW" << std::endl;
 		exit(-1);
 	}
 
@@ -22,6 +22,12 @@ OGL_Window::OGL_Window(int width, int height, std::string name, bool fullscreen)
 
 	// make the OpenGl context current
 	glfwMakeContextCurrent(window);
+
+	// Init GLEW 
+	if (glewInit() != GLEW_OK) {
+		std::cerr << "Failed to init GLEW" << std::endl;
+		exit(-1);
+	}
 
 	// glViewport(0, 0, width, height); viewport is automatically set to window size 
 }
