@@ -7,6 +7,7 @@ OGL_Window::OGL_Window(int width, int height, std::string name, bool fullscreen)
 		std::cerr << "Failed to init GLFW" << std::endl;
 		exit(-1);
 	}
+	
 	if (fullscreen) {
 		window = glfwCreateWindow(width, height, name.c_str(), glfwGetPrimaryMonitor(), NULL);
 	} else {
@@ -36,7 +37,6 @@ OGL_Window::~OGL_Window() {
 	glfwTerminate();
 }
 
-
 // for now, these two functions take now params,
 void OGL_Window::startDrawing() {
 	glEnableClientState(GL_VERTEX_ARRAY);
@@ -65,18 +65,6 @@ void OGL_Window::drawRectangle(int width, int height, Colors c) {
 
 	glfwSwapBuffers(window);
 	glfwPollEvents();
-}
-
-void OGL_Window::chooseColor(Colors c) {
-	// glColor3f(red, green, blue)
-	std::array<float, 4> color = getColor(c); // (R, G, B, opacity)
-	glColor3f(color[0], color[1], color[2]);
-}
-
-void OGL_Window::chooseClearColor(Colors c) {
-	std::array<float, 4> color = getColor(c); // (R, G, B, opacity)
-	glClearColor(color[0], color[1], color[2], color[3]); // set clear color 
-	glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
 }
 
 GLFWwindow* OGL_Window::getWindow() {
@@ -110,5 +98,17 @@ std::array<float, 4> getColor(Colors c) {
 			break;
 	}
 	return std::array<float, 4> {0.5f, 0.0f, 1.0f, 1.0f}; // purple
+}
+
+void OGL_Window::chooseColor(Colors c) {
+	// glColor3f(red, green, blue)
+	std::array<float, 4> color = getColor(c); // (R, G, B, opacity)
+	glColor3f(color[0], color[1], color[2]);
+}
+
+void OGL_Window::chooseClearColor(Colors c) {
+	std::array<float, 4> color = getColor(c); // (R, G, B, opacity)
+	glClearColor(color[0], color[1], color[2], color[3]); // set clear color 
+	glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
 }
 
