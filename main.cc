@@ -55,8 +55,9 @@ int main() {
 		auto start = steady_clock::now();
         while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {
 			// DO NOTHING for speed amount of seconds
-			w.drawRectangle(5, 5, Colors::PURPLE);
+			
         }
+		w.drawRectangle(5, 5, Colors::PURPLE);
 		std::cout << x << std::endl;
 		x++;
 		if (x == 10) {
