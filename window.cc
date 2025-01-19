@@ -2,13 +2,12 @@
 
 OGL_Window::OGL_Window(int width, int height, std::string name, bool fullscreen) {
 
-	/*
     glewInit();
 	if (glewInit() != GLEW_OK) {
 		std::cerr << "Failed to init GLEW" << std::endl;
 		exit(-1);
 	}
-	*/
+
 	if (fullscreen) {
 		window = glfwCreateWindow(width, height, name.c_str(), glfwGetPrimaryMonitor(), NULL);
 	} else {
