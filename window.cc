@@ -67,6 +67,18 @@ void OGL_Window::drawRectangle(int width, int height, Colors c) {
 	glfwPollEvents();
 }
 
+void OGL_Window::chooseColor(Colors c) {
+	// glColor3f(red, green, blue)
+	std::array<float, 4> color = getColor(c); // (R, G, B, opacity)
+	glColor3f(color[0], color[1], color[2]);
+}
+
+void OGL_Window::chooseClearColor(Colors c) {
+	std::array<float, 4> color = getColor(c); // (R, G, B, opacity)
+	glClearColor(color[0], color[1], color[2], color[3]); // set clear color 
+	glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
+}
+
 GLFWwindow* OGL_Window::getWindow() {
     return this->window;
 }
@@ -98,17 +110,5 @@ std::array<float, 4> OGL_Window::getColor(Colors c) {
 			break;
 	}
 	return std::array<float, 4> {0.5f, 0.0f, 1.0f, 1.0f}; // purple
-}
-
-void OGL_Window::chooseColor(Colors c) {
-	// glColor3f(red, green, blue)
-	std::array<float, 4> color = getColor(c); // (R, G, B, opacity)
-	glColor3f(color[0], color[1], color[2]);
-}
-
-void OGL_Window::chooseClearColor(Colors c) {
-	std::array<float, 4> color = getColor(c); // (R, G, B, opacity)
-	glClearColor(color[0], color[1], color[2], color[3]); // set clear color 
-	glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
 }
 

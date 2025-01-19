@@ -21,13 +21,13 @@ class OGL_Window {
         void drawRectangle(int width, int height, Colors c = Colors::BLACK);
         // void drawText(put params here);
 
-        std::array<float, 4> getColor(Colors c); // returns (R, G, B, opacity)
-        GLFWwindow* getWindow();
-
         void chooseColor(Colors c);
         void chooseClearColor(Colors c);
         void startDrawing();
         void stopDrawing();
+
+        std::array<float, 4> getColor(Colors c); // returns (R, G, B, opacity)
+        GLFWwindow* getWindow();
 
 };
 
