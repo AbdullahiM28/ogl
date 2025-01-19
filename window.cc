@@ -7,7 +7,7 @@ OGL_Window::OGL_Window(int width, int height, std::string name, bool fullscreen)
 		std::cerr << "Failed to init GLFW" << std::endl;
 		exit(-1);
 	}
-	
+
 	if (fullscreen) {
 		window = glfwCreateWindow(width, height, name.c_str(), glfwGetPrimaryMonitor(), NULL);
 	} else {
@@ -71,7 +71,7 @@ GLFWwindow* OGL_Window::getWindow() {
     return this->window;
 }
 
-std::array<float, 4> getColor(Colors c) {
+std::array<float, 4> OGL_Window::getColor(Colors c) {
 	switch (c) {
 		case Colors::BLACK:
 			return std::array<float, 4> {0.0f, 0.0f, 0.0f, 1.0f};
