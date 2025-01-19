@@ -8,7 +8,7 @@
 #include <string>
 
 enum Colors {
-    BLACK, WHITE, RED, BLUE, GREEN, LIGHT_BLUE, PURPLE, YELLOW 
+    BLACK, WHITE, RED, BLUE, GREEN, CYAN, PURPLE, YELLOW 
 };
 
 class OGL_Window {
