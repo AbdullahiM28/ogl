@@ -52,7 +52,7 @@ int main() {
 			glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
 		}
 
-		w.drawRectangle();
+		w.drawRectangle(5, 5, Colors::WHITE);
 
 		using namespace std::chrono;
 		auto start = steady_clock::now();
@@ -61,7 +61,7 @@ int main() {
         }
 		std::cout << x << std::endl;
 		x++;
-		if (x == 5) {
+		if (x == 10) {
 			break;
 		}
 	}
