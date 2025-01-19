@@ -40,16 +40,16 @@ int main() {
 			// #### glClearColour(red, green, blue, opaqueness)
 
 		if (x % 3 == 0) {
-			glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // puts color on the screen
-			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
+			glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // set clear color 
+			glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
 			
 		} else if (x % 3 == 1) {
-			glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // puts color on the screen
-			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
+			glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // set clear color
+			glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
 			
 		} else {
-			glClearColor(1.0f, 0.0f, 0.0f, 1.0f); // puts color on the screen
-			glClear(GL_COLOR_BUFFER_BIT); // clears the screen
+			glClearColor(1.0f, 0.0f, 0.0f, 1.0f); // set clear color
+			glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
 		}
 
 		w.drawRectangle();

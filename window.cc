@@ -61,7 +61,7 @@ void OGL_Window::drawRectangle(int width, int height, Colors c) {
 	glVertexPointer(2, GL_FLOAT, 0, vertices);
 
 	glColor3f(0.0f, 0.0f, 0.0f); // sets the drawing color
-	// chooseColor(c); // this will clear the old color then choose the new color
+	chooseColor(c);
 
 
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
@@ -69,4 +69,32 @@ void OGL_Window::drawRectangle(int width, int height, Colors c) {
 
 	glfwSwapBuffers(window);
 	glfwPollEvents();
+}
+
+void OGL_Window::chooseColor(Colors c) {
+	// glColor3f(red, green, blue)
+	switch (c) {
+		case Colors::BLACK:
+			glColor3f(0.0f, 0.0f, 0.0f); break;
+		case Colors::WHITE:
+			glColor3f(1.0f, 1.0f, 1.0f); break;
+
+		case Colors::RED:
+			glColor3f(1.0f, 0.0f, 0.0f); break;
+
+		case Colors::BLUE:
+			glColor3f(0.0f, 0.0f, 1.0f); break;
+
+		case Colors::GREEN:
+			glColor3f(0.0f, 1.0f, 0.0f); break;
+
+		case Colors::LIGHT_BLUE:
+			glColor3f(0.5f, 1.0f, 0.5f); break;
+
+		case Colors::PURPLE:
+			glColor3f(1.0f, 1.0f, 0.0f); break;
+
+		case Colors::YELLOW:
+			glColor3f(0.0f, 1.0f, 1.0f); break;
+	}
 }
