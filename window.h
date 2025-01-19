@@ -3,9 +3,8 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include <iostream>
-#include <chrono>
 #include <string>
+#include <array>
 
 enum Colors {
     BLACK, WHITE, RED, BLUE, GREEN, CYAN, PURPLE, YELLOW 
@@ -21,11 +20,14 @@ class OGL_Window {
         void drawRectangle(int width, int height, Colors c = Colors::BLACK);
         // void drawText(put params here);
 
+        
         void chooseColor(Colors c);
+        void chooseClearColor(Colors c);
         void startDrawing();
         void stopDrawing();
 
         GLFWwindow* getWindow();
+        std::array<float, 4> getColor(Colors c); // returns (R, G, B, opacity)
 };
 
 #endif

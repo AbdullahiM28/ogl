@@ -2,6 +2,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <utility>
+#include <chrono>
 #include "window.h"
 
 
@@ -24,14 +25,6 @@ class hash_pair { // lifted from geeksforgeeks
 int main() {
 	float speed = 3; // determines have fast the block drops
 
-
-	// making each point 0.25f makes the square smaller (compared to 0.5f)
-	// adding 0.5f to a point moves the point to the right
-	// adding 0.5f to all points puts the square in the top right
-
-	
-	
-	// render loop
 	OGL_Window w(600, 600); // width, height
 	// GLFWwindow *window = w.getWindow();
 
@@ -40,22 +33,15 @@ int main() {
 			// #### glClearColour(red, green, blue, opaqueness)
 
 		if (x % 5 == 0) {
-			glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // set clear color 
-			glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
-			
+			w.chooseClearColor(Colors::BLUE);	
 		} else if (x % 5 == 1) {
-			glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // set clear color
-			glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
-			
+			w.chooseClearColor(Colors::GREEN);
 		} else if (x % 5 == 2) {
-			glClearColor(1.0f, 0.0f, 0.0f, 1.0f); // set clear color
-			glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
+			w.chooseClearColor(Colors::RED);
 		} else if (x % 5 == 3) {
-			glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // set clear color
-			glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
+			w.chooseClearColor(Colors::BLACK);
 		} else {
-			glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // set clear color
-			glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
+			w.chooseClearColor(Colors::WHITE);
 		}
 
 		w.drawRectangle(5, 5, Colors::WHITE);
@@ -73,4 +59,3 @@ int main() {
 	}
 	return 0;	
 }
-

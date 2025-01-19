@@ -37,10 +37,6 @@ OGL_Window::~OGL_Window() {
 }
 
 
-GLFWwindow* OGL_Window::getWindow() {
-    return this->window;
-}
-
 // for now, these two functions take now params,
 void OGL_Window::startDrawing() {
 	glEnableClientState(GL_VERTEX_ARRAY);
@@ -73,29 +69,51 @@ void OGL_Window::drawRectangle(int width, int height, Colors c) {
 
 void OGL_Window::chooseColor(Colors c) {
 	// glColor3f(red, green, blue)
+	std::array<float, 4> color = getColor(c); // (R, G, B, opacity)
+	glColor3f(color[0], color[1], color[2])
+}
+
+void OGL_Window::chooseClearColor(Colors c) {
+	std::array<float, 4> color = getColor(c); // (R, G, B, opacity)
+	glClearColor(color[0], color[1], color[2], color[3]); // set clear color 
+	glClear(GL_COLOR_BUFFER_BIT); // puts clear color on screen
+}
+
+GLFWwindow* OGL_Window::getWindow() {
+    return this->window;
+}
+
+std::array<float, 4> getColor(Colors c) {
 	switch (c) {
 		case Colors::BLACK:
-			glColor3f(0.0f, 0.0f, 0.0f); break;
+
+			return std::array<float, 4> {0.0f, 0.0f, 0.0f, 1.0f};
 
 		case Colors::WHITE:
-			glColor3f(1.0f, 1.0f, 1.0f); break;
+		
+
+			return std::array<float, 4> {1.0f, 1.0f, 1.0f, 1.0f};
 
 		case Colors::RED:
-			glColor3f(1.0f, 0.0f, 0.0f); break;
+			
+			return std::array<float, 4> {1.0f, 0.0f, 0.0f, 1.0f};
 
 		case Colors::GREEN:
-			glColor3f(0.0f, 1.0f, 0.0f); break;
+			return std::array<float, 4> {0.0f, 1.0f, 0.0f, 1.0f};
 	
 		case Colors::BLUE:
-			glColor3f(0.0f, 0.0f, 1.0f); break;
+			return std::array<float, 4> {0.0f, 0.0f, 1.0f, 1.0f};
 
 		case Colors::CYAN:
 			glColor3f(0.0f, 1.0f, 1.0f); break;
+			return std::array<float, 4> {0.0f, 1.0f, 1.0f, 1.0f};
 
 		case Colors::YELLOW:
 			glColor3f(1.0f, 1.0f, 0.1f); break;
+			return std::array<float, 4> {1.0f, 1.0f, 0.1f, 1.0f};
 
-		case Colors::PURPLE:
-			glColor3f(0.5f, 0.0f, 1.0f); break;
+		default:
+			return std::array<float, 4> {0.5f, 0.0f, 1.0f, 1.0f}; // purple
 	}
 }
+
