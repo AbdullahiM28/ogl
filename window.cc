@@ -107,7 +107,8 @@ std::array<float, 4> getColor(Colors c) {
 			return std::array<float, 4> {1.0f, 1.0f, 0.1f, 1.0f};
 
 		case Colors::PURPLE:
-			return std::array<float, 4> {0.5f, 0.0f, 1.0f, 1.0f}; // purple
+			break;
 	}
+	return std::array<float, 4> {0.5f, 0.0f, 1.0f, 1.0f}; // purple
 }
 
