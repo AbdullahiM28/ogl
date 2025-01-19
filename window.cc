@@ -89,12 +89,12 @@ void OGL_Window::chooseColor(Colors c) {
 			glColor3f(0.0f, 1.0f, 0.0f); break;
 
 		case Colors::LIGHT_BLUE:
-			glColor3f(0.5f, 1.0f, 0.5f); break;
+			glColor3f(0.0f, 1.0f, 0.5f); break;
 
 		case Colors::PURPLE:
 			glColor3f(1.0f, 1.0f, 0.0f); break;
 
 		case Colors::YELLOW:
-			glColor3f(0.0f, 1.0f, 1.0f); break;
+			glColor3f(0.0f, 0.5f, 1.0f); break;
 	}
 }
