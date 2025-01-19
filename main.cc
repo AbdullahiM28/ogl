@@ -31,6 +31,10 @@ int main() {
 	int x = 0;
 	while (true) {
 			// #### glClearColour(red, green, blue, opaqueness)
+		using namespace std::chrono;
+		auto start = steady_clock::now();
+		// wait speed amount of seconds
+        while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {}
 
 		if (x % 5 == 0) {
 			w.chooseClearColor(Colors::BLUE);
@@ -49,14 +53,10 @@ int main() {
 			w.drawRectangle(5, 5, Colors::BLACK);
 		}
 
-		
+		// wait speed amount of seconds
+		start = steady_clock::now();
+        while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {}
 
-		using namespace std::chrono;
-		auto start = steady_clock::now();
-        while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {
-			// DO NOTHING for speed amount of seconds
-			
-        }
 		w.drawRectangle(5, 5, Colors::PURPLE);
 		std::cout << x << std::endl;
 		x++;
