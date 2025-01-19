@@ -21,7 +21,7 @@ class OGL_Window {
         void drawRectangle(int width = 5, int height = 5, Colors c = Colors::BLACK);
         // void drawText(put params here);
 
-        void chooseColor(Color c);
+        void chooseColor(Colors c);
         void startDrawing();
         void stopDrawing();
 
