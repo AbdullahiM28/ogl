@@ -70,7 +70,7 @@ void OGL_Window::drawRectangle(int width, int height, Colors c) {
 void OGL_Window::chooseColor(Colors c) {
 	// glColor3f(red, green, blue)
 	std::array<float, 4> color = getColor(c); // (R, G, B, opacity)
-	glColor3f(color[0], color[1], color[2])
+	glColor3f(color[0], color[1], color[2]);
 }
 
 void OGL_Window::chooseClearColor(Colors c) {
@@ -86,16 +86,12 @@ GLFWwindow* OGL_Window::getWindow() {
 std::array<float, 4> getColor(Colors c) {
 	switch (c) {
 		case Colors::BLACK:
-
 			return std::array<float, 4> {0.0f, 0.0f, 0.0f, 1.0f};
 
 		case Colors::WHITE:
-		
-
 			return std::array<float, 4> {1.0f, 1.0f, 1.0f, 1.0f};
 
 		case Colors::RED:
-			
 			return std::array<float, 4> {1.0f, 0.0f, 0.0f, 1.0f};
 
 		case Colors::GREEN:
@@ -111,9 +107,7 @@ std::array<float, 4> getColor(Colors c) {
 		case Colors::YELLOW:
 			glColor3f(1.0f, 1.0f, 0.1f); break;
 			return std::array<float, 4> {1.0f, 1.0f, 0.1f, 1.0f};
-
-		default:
-			return std::array<float, 4> {0.5f, 0.0f, 1.0f, 1.0f}; // purple
 	}
+	return std::array<float, 4> {0.5f, 0.0f, 1.0f, 1.0f}; // purple
 }
 
