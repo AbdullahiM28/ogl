@@ -33,23 +33,29 @@ int main() {
 			// #### glClearColour(red, green, blue, opaqueness)
 
 		if (x % 5 == 0) {
-			w.chooseClearColor(Colors::BLUE);	
+			w.chooseClearColor(Colors::BLUE);
+			w.drawRectangle(5, 5, Colors::WHITE);
 		} else if (x % 5 == 1) {
 			w.chooseClearColor(Colors::GREEN);
+			w.drawRectangle(5, 5, Colors::BLACK);
 		} else if (x % 5 == 2) {
 			w.chooseClearColor(Colors::RED);
+			w.drawRectangle(5, 5, Colors::WHITE);
 		} else if (x % 5 == 3) {
 			w.chooseClearColor(Colors::BLACK);
+			w.drawRectangle(5, 5, Colors::WHITE);
 		} else {
 			w.chooseClearColor(Colors::WHITE);
+			w.drawRectangle(5, 5, Colors::BLACK);
 		}
 
-		w.drawRectangle(5, 5, Colors::WHITE);
+		
 
 		using namespace std::chrono;
 		auto start = steady_clock::now();
         while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {
 			// DO NOTHING for speed amount of seconds
+			w.drawRectangle(5, 5, Colors::PURPLE);
         }
 		std::cout << x << std::endl;
 		x++;
