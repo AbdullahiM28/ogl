@@ -59,7 +59,7 @@ void renderText(const std::string &text, float x, float y, float scale, glm::vec
 
 int main() {
     initOpenGL();    // Initialize GLFW, GLEW, OpenGL
-    loadFont("path_to_font.ttf");  // Load the font
+    loadFont("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf");  // Load the font
 
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT);
