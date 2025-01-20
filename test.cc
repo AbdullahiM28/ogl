@@ -24,6 +24,7 @@ void loadFont(const char* fontPath) {
     if (FT_Init_FreeType(&ft)) { std::cerr << "Could not init FreeType!" << std::endl; exit(-1); }
 
     FT_Face face;
+    std::cout << fontPath << std::endl;
     if (FT_New_Face(ft, fontPath, 0, &face)) { std::cerr << "Could not open font!" << std::endl; exit(-1); }
     FT_Set_Pixel_Sizes(face, 0, 48);
 
