@@ -34,7 +34,9 @@ int main() {
 		using namespace std::chrono;
 		auto start = steady_clock::now();
 		
+		glPointSize(0.5f);
 		w.drawRectangle(1,1, Colors::YELLOW);
+		glPointSize(1.0f);
 
 		// wait speed amount of seconds
         while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {}
