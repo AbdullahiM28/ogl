@@ -60,6 +60,29 @@ void OGL_Window::drawRectangle(int width, int height, Colors c) {
 	glfwPollEvents();
 }
 
+void OGL_Window::drawTriangle(int width, int height, Colors c) {
+    // Define 3 vertices for a triangle
+    float vertices[] = { 
+        -0.01f * width,  0.01f * height,   // top-left (x, y)
+         0.01f * width,  0.01f * height,   // top-right (x, y)
+         0.0f,           -0.01f * height   // bottom-center (x, y)
+    };
+
+    startDrawing();
+    glVertexPointer(2, GL_FLOAT, 0, vertices);
+
+    glColor3f(0.0f, 0.0f, 0.0f); // sets the drawing color
+    chooseColor(c);
+
+    // Draw the triangle using GL_TRIANGLES
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+
+    stopDrawing();
+
+    glfwSwapBuffers(window);
+    glfwPollEvents();
+}
+
 void OGL_Window::chooseColor(Colors c) {
 	// glColor3f(red, green, blue)
 	std::array<float, 4> color = getColor(c); // (R, G, B, opacity)

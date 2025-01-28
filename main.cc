@@ -34,6 +34,7 @@ int main() {
 		using namespace std::chrono;
 		auto start = steady_clock::now();
 		// wait speed amount of seconds
+		w.drawTriangle(5,5, Colors::BLACK);
         while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {}
 
 		if (x % 5 == 0) {
