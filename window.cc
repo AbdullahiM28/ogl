@@ -85,24 +85,22 @@ void OGL_Window::drawTriangle(int width, int height, Colors c) {
 
 void OGL_Window::drawPixel(Colors c = Colors::BLACK) {
 	float vertices[] = { 
-        -0.01f, -0.01f,   // bottom-left (x, y)
-         0.01f, -0.01f,   // bottom-right (x, y)
-         0.0f,   0.01f    // top-center (x, y)
-    };
+    	-0.01f,  0.01f,  // top-left (x, y)
+    	0.01f,  0.01f,   // top-right 
+    	-0.01f, -0.01f,  // bottom-left
+    	0.01f, -0.01f  // bottom-right
+	};
+	startDrawing();
+	glVertexPointer(2, GL_FLOAT, 0, vertices);
 
-    startDrawing();
-    glVertexPointer(2, GL_FLOAT, 0, vertices);
+	glColor3f(0.0f, 0.0f, 0.0f); // sets the drawing color
+	chooseColor(c);
 
-    glColor3f(0.0f, 0.0f, 0.0f); // sets the drawing color
-    chooseColor(c);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+	stopDrawing();
 
-    // Draw the triangle using GL_TRIANGLES
-    glDrawArrays(GL_TRIANGLES, 0, 3);
-
-    stopDrawing();
-
-    glfwSwapBuffers(window);
-    glfwPollEvents();
+	glfwSwapBuffers(window);
+	glfwPollEvents();
 }
 
 void OGL_Window::chooseColor(Colors c) {
