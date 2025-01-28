@@ -85,10 +85,10 @@ void OGL_Window::drawTriangle(int width, int height, Colors c) {
 
 void OGL_Window::drawPixel(Colors c) {
 	float vertices[] = { 
-    	-0.001f,  0.001f,  // top-left (x, y)
-    	0.001f,  0.001f,   // top-right 
-    	-0.001f, -0.001f,  // bottom-left
-    	0.001f, -0.001f  // bottom-right
+    	-0.005f,  0.005f,  // top-left (x, y)
+    	0.005f,  0.005f,   // top-right 
+    	-0.005f, -0.005f,  // bottom-left
+    	0.005f, -0.005f  // bottom-right
 	};
 	startDrawing();
 	glVertexPointer(2, GL_FLOAT, 0, vertices);
