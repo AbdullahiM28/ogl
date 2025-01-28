@@ -63,9 +63,9 @@ void OGL_Window::drawRectangle(int width, int height, Colors c) {
 void OGL_Window::drawTriangle(int width, int height, Colors c) {
     // Define 3 vertices for a triangle
     float vertices[] = { 
-        -0.01f * width * 2, -0.01f * height * 2,   // bottom-left (x, y)
-         0.01f * width * 2, -0.01f * height * 2,   // bottom-right (x, y)
-         0.0f,           0.01f * height * 2    // top-center (x, y)
+        -0.01f * width, -0.01f * height,   // bottom-left (x, y)
+         0.01f * width, -0.01f * height,   // bottom-right (x, y)
+         0.0f,           0.01f * height    // top-center (x, y)
     };
 
     startDrawing();
