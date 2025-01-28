@@ -33,8 +33,10 @@ int main() {
 			// #### glClearColour(red, green, blue, opaqueness)
 		using namespace std::chrono;
 		auto start = steady_clock::now();
+		
+		w.drawTriangle(5,5, Colors::YELLOW);
+
 		// wait speed amount of seconds
-		w.drawTriangle(5,5, Colors::BLACK);
         while (duration_cast<seconds>(steady_clock::now() - start).count() < speed) {}
 
 		if (x % 5 == 0) {
