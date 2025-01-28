@@ -65,7 +65,7 @@ void OGL_Window::drawTriangle(int width, int height, Colors c) {
     float vertices[] = {
     	-0.01f * width,  0.01f * height,   // top-left (x, y)
         0.01f * width,  0.01f * height,   // top-right (x, y)
-		0.00f, 0.01f * height
+		0.00f, -0.01f * height				// top point
     };
 
     startDrawing();
