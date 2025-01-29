@@ -83,12 +83,12 @@ void OGL_Window::drawTriangle(int width, int height, Colors c) {
     glfwPollEvents();
 }
 
-void OGL_Window::drawPixel(Colors c) {
+void OGL_Window::drawPixel(int x, int y, Colors c) {
 	float vertices[] = { 
-    	-0.005f,  0.005f,  // top-left (x, y)
-    	0.005f,  0.005f,   // top-right 
-    	-0.005f, -0.005f,  // bottom-left
-    	0.005f, -0.005f  // bottom-right
+    	-0.005f + x,  0.005f + y,  // top-left (x, y)
+    	0.005f + x,  0.005f + y,   // top-right 
+    	-0.005f + x, -0.005f + y,  // bottom-left
+    	0.005f + x, -0.005f + y  // bottom-right
 	};
 	startDrawing();
 	glVertexPointer(2, GL_FLOAT, 0, vertices);

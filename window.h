@@ -19,7 +19,7 @@ class OGL_Window {
         
         void drawRectangle(int width, int height, Colors c = Colors::BLACK);
         void drawTriangle(int width, int height, Colors c = Colors::BLACK);
-        void drawPixel(Colors c = Colors::BLACK);
+        void drawPixel(int x, int y, Colors c = Colors::BLACK);
         // void drawText(put params here);
 
         void chooseColor(Colors c);
