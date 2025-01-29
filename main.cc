@@ -34,7 +34,7 @@ int main() {
 		using namespace std::chrono;
 		auto start = steady_clock::now();
 		
-		w.drawPixel(x + 0.04f, 0, Colors::YELLOW);
+		w.drawPixel(x * 0.04f, 0, Colors::YELLOW);
 		//glPointSize(1.0f);
 
 		// wait speed amount of seconds
