@@ -1,6 +1,7 @@
 #include "window.h"
 
-OGL_Window::OGL_Window(int width, int height, std::string name, bool fullscreen) {
+OGL_Window::OGL_Window(int width, int height, std::string name, bool fullscreen)
+	: width(width), height(height) {
 
 	if (!glfwInit()) {
 		std::cerr << "Failed to init GLFW" << std::endl;
@@ -39,21 +40,24 @@ void OGL_Window::stopDrawing() {
 	glDisableClientState(GL_VERTEX_ARRAY);
 }
 
-void OGL_Window::drawRectangle(int width, int height, Colors c) {
+void OGL_Window::drawRectangle(int x, int y, int width, int height, Colors c) {
+	float w = 0.01f * width;
+	float h = 0.01f * height;
+
 	float vertices[] = { 
-    	-0.01f * width,  0.01f * height,  // top-left (x, y)
-    	0.01f * width,  0.01f * height,   // top-right 
-    	-0.01f * width, -0.01f * height,  // bottom-left
-    	0.01f * width, -0.01f * height  // bottom-right
+    		x - w, y + h,		// top-left (x, y)
+    		x + w, y + h,   	// top-right 
+    		x - w, y - h,  		// bottom-left
+		x + w, y - h  		// bottom-right
 	};
-	startDrawing();
+	startDrawing(); 
 	glVertexPointer(2, GL_FLOAT, 0, vertices);
 
 	glColor3f(0.0f, 0.0f, 0.0f); // sets the drawing color
 	chooseColor(c);
 
 
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 	stopDrawing();
 
 	glfwSwapBuffers(window);
@@ -61,26 +65,26 @@ void OGL_Window::drawRectangle(int width, int height, Colors c) {
 }
 
 void OGL_Window::drawTriangle(int width, int height, Colors c) {
-    // Define 3 vertices for a triangle
-    float vertices[] = { 
-        -0.01f * width, -0.01f * height,   // bottom-left (x, y)
-         0.01f * width, -0.01f * height,   // bottom-right (x, y)
-         0.0f,           0.01f * height    // top-center (x, y)
-    };
+	// Define 3 vertices for a triangle
+	float vertices[] = { 
+		-0.01f * width, -0.01f * height,   // bottom-left (x, y)
+		 0.01f * width, -0.01f * height,   // bottom-right (x, y)
+		 0.0f,           0.01f * height    // top-center (x, y)
+	};
 
-    startDrawing();
-    glVertexPointer(2, GL_FLOAT, 0, vertices);
+	startDrawing();
+	glVertexPointer(2, GL_FLOAT, 0, vertices);
 
-    glColor3f(0.0f, 0.0f, 0.0f); // sets the drawing color
-    chooseColor(c);
+	glColor3f(0.0f, 0.0f, 0.0f); // sets the drawing color
+	chooseColor(c);
 
-    // Draw the triangle using GL_TRIANGLES
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+	// Draw the triangle using GL_TRIANGLES
+	glDrawArrays(GL_TRIANGLES, 0, 3);
 
-    stopDrawing();
+	stopDrawing();
 
-    glfwSwapBuffers(window);
-    glfwPollEvents();
+	glfwSwapBuffers(window);
+	glfwPollEvents();
 }
 
 void OGL_Window::drawPixel(int x, int y, Colors c) {
@@ -116,7 +120,7 @@ void OGL_Window::chooseClearColor(Colors c) {
 }
 
 GLFWwindow* OGL_Window::getWindow() {
-    return this->window;
+	return this->window;
 }
 
 std::array<float, 4> OGL_Window::getColor(Colors c) {

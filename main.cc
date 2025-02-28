@@ -34,7 +34,7 @@ int main() {
 		using namespace std::chrono;
 		auto start = steady_clock::now();
 		
-		w.drawPixel(x * 0.2f, 0, Colors::YELLOW);
+		w.drawPixel(0, 0, Colors::YELLOW);
 		//glPointSize(1.0f);
 
 		// wait speed amount of seconds
@@ -42,19 +42,19 @@ int main() {
 
 		if (x % 5 == 0) {
 			w.chooseClearColor(Colors::BLUE);
-			w.drawRectangle(5, 5, Colors::WHITE);
+			w.drawRectangle(1, 1, 5, 5, Colors::WHITE);
 		} else if (x % 5 == 1) {
 			w.chooseClearColor(Colors::GREEN);
-			w.drawRectangle(5, 5, Colors::BLACK);
+			w.drawRectangle(-1, -1, 5, 5, Colors::BLACK);
 		} else if (x % 5 == 2) {
 			w.chooseClearColor(Colors::RED);
-			w.drawRectangle(5, 5, Colors::WHITE);
+			w.drawRectangle(1, -1, 5, 5, Colors::WHITE);
 		} else if (x % 5 == 3) {
 			w.chooseClearColor(Colors::BLACK);
-			w.drawRectangle(5, 5, Colors::WHITE);
+			w.drawRectangle(0, 0, 5, 5, Colors::WHITE);
 		} else {
 			w.chooseClearColor(Colors::WHITE);
-			w.drawRectangle(5, 5, Colors::BLACK);
+			w.drawRectangle(-1, 1, 5, 5, Colors::BLACK);
 		}
 
 		// wait speed amount of seconds

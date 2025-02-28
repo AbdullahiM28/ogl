@@ -33,4 +33,4 @@ clean :						# remove files that can be regenerated
 	rm -f ${DEPENDS} ${OBJECTS} ${EXEC} && clear
 
 run: ${EXEC}
-	export LIBGL_ALWAYS_SOFTWARE=1 && ./$(EXEC)
+	./$(EXEC)

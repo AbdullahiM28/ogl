@@ -12,12 +12,13 @@ enum Colors {
 
 class OGL_Window {
     GLFWwindow* window = NULL;
+    int width; int height;
 
     public:
         OGL_Window(int width, int height, std::string name = "window", bool fullscreen = false);
         ~OGL_Window();
         
-        void drawRectangle(int width, int height, Colors c = Colors::BLACK);
+        void drawRectangle(int x, int y, int width, int height, Colors c = Colors::BLACK);
         void drawTriangle(int width, int height, Colors c = Colors::BLACK);
         void drawPixel(int x, int y, Colors c = Colors::BLACK);
         // void drawText(put params here);
